@@ -152,7 +152,7 @@ public class PostgresSqlAction extends SqlAction.Impl {
         return _jdbc().queryForObject(_lookup("session_id"), Long.class, uuid); //$NON-NLS-1$
     }
 
-    public int removePassword(long id) {
+    public int removePassword(Long id) {
         return _jdbc().update(_lookup("remove_pass"), id); //$NON-NLS-1$
     }
 
@@ -234,6 +234,7 @@ public class PostgresSqlAction extends SqlAction.Impl {
         return _jdbc().query(_lookup("shape_ids"), //$NON-NLS-1$
                 new IdRowMapper(), roiId);
     }
+
 
     @Override
     public void setFileRepo(Collection<Long> ids, String repoId) {
