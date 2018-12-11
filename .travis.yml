@@ -7,5 +7,5 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 before_install:
-  - git clone git://github.com/rgozim/omero-dsl
-  - cd omero-dsl && rm dslplugin/src/test/groovy/DslExtensionTest.groovy && ./gradlew publishToMavenLocal
+  - git clone git://github.com/ome/omero-dsl
+  - cd omero-dsl && ./gradlew publishToMavenLocal
