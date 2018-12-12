@@ -7,7 +7,7 @@ plugins {
 repositories {
     mavenCentral()
     maven {
-        url 'http://artifacts.openmicroscopy.org/artifactory/maven/'
+        url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
     }
 }
 
@@ -112,6 +112,18 @@ task sourceJar(type: Jar) {
 }
 
 publishing {
+    repositories {
+      maven {
+        def releaseRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.staging/'
+        def snapshotsRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.snapshots/'
+        url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        // Deploy to artifactory with: ./gradlew publish -P artifactory_user=$USER -P artifactory_pass=$PASS
+        credentials {
+          username project.artifactory_user
+          password project.artifactory_pass
+        }
+      }
+    }
     publications {
         modelJar(MavenPublication) {
             artifact customJar
