@@ -1,11 +1,12 @@
 plugins {
     id 'java-library'
     id "maven-publish"
-    id "org.openmicroscopy.dsl" version "5.4.8-SNAPSHOT"
+    id "org.openmicroscopy.dsl" version "5.5.0-SNAPSHOT"
 }
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven {
         url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
     }
@@ -109,6 +110,11 @@ task customJar(type: Jar) {
 task sourceJar(type: Jar) {
     classifier "sources"
     from sourceSets.main.allSource
+}
+
+ext {
+    artifactory_user = project.hasProperty('artifactory_user') ? project.getProperty('artifactory_user') : ''
+    artifactory_pass = project.hasProperty('artifactory_pass') ? project.getProperty('artifactory_pass') : ''
 }
 
 publishing {
