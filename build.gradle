@@ -10,6 +10,9 @@ repositories {
     maven {
         url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
     }
+    maven {
+        url "https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases"
+    }
 }
 
 group = 'org.openmicroscopy'
