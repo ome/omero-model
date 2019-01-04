@@ -29,6 +29,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'org.testng', name: 'testng', version: '6.14.2'
 
+    provided 'edu.ucar:bufr:3.0'
+    provided 'edu.ucar:udunits:4.5.5'
+
     // Needs updating to later versions
     provided 'org.springframework:spring-orm:4.3.14.RELEASE'
     provided 'org.springframework:spring-context:4.3.14.RELEASE'
@@ -58,7 +61,6 @@ sourceSets {
         }
     }
 }
-
 
 dsl {
     templateFiles fileTree(
@@ -95,64 +97,5 @@ dsl {
     }
 }
 
-/**
- * Function to collect runtime components excluding what we've marked as
- * {@code dependencies{ provided 'xx' }}
- * @return unzipped "compile" dependencies
- */
-def collectOmeroJars() {
-    // Remove provided jars from runtimeClasspath configuration
-    def diff = configurations.runtimeClasspath - configurations.provided
-    return diff.collect { it.isDirectory() ? it : zipTree(it) }
-}
-
-task customJar(type: Jar) {
-    from sourceSets.main.output // Include self compiled
-    from collectOmeroJars()
-}
-
-task sourceJar(type: Jar) {
-    classifier "sources"
-    from sourceSets.main.allSource
-}
-
-ext {
-    artifactory_user = project.hasProperty('artifactory_user') ? project.getProperty('artifactory_user') : ''
-    artifactory_pass = project.hasProperty('artifactory_pass') ? project.getProperty('artifactory_pass') : ''
-}
-
-publishing {
-    repositories {
-      maven {
-        def releaseRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.staging/'
-        def snapshotsRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.snapshots/'
-        url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-        // Deploy to artifactory with: ./gradlew publish -P artifactory_user=$USER -P artifactory_pass=$PASS
-        credentials {
-          username project.artifactory_user
-          password project.artifactory_pass
-        }
-      }
-    }
-    publications {
-        modelJar(MavenPublication) {
-            artifact customJar
-            artifact sourceJar
-
-            // Edit pom to mark "provided" as dependencies
-            pom.withXml { xml ->
-                def dependenciesNode = xml.asNode().appendNode('dependencies')
-
-                configurations.provided.allDependencies.each {
-                    if (!(it instanceof SelfResolvingDependency)) {
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', it.group)
-                        dependencyNode.appendNode('artifactId', it.name)
-                        dependencyNode.appendNode('version', it.version)
-                        dependencyNode.appendNode('scope', 'compile')
-                    }
-                }
-            }
-        }
-    }
-}
+// Add publish functionality
+apply from: 'publish.gradle'
