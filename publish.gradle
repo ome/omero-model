@@ -45,7 +45,7 @@ publishing {
                 }
                 def repositoriesNode = xml.asNode().appendNode('repositories')
                 project.repositories.each {
-                    if (!(it.name.startsWith('Maven'))) {
+                    if (!(it.name.toLowerCase().startsWith('maven'))) {
                         def repositoryNode = repositoriesNode.appendNode('repository')
                         repositoryNode.appendNode('id', it.name)
                         repositoryNode.appendNode('name', it.name)
