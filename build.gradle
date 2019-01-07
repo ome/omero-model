@@ -13,7 +13,7 @@ repositories {
     }
     maven {
         name 'unidata-releases'
-        url "https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases"
+        url "https://artifacts.unidata.ucar.edu/repository/unidata-releases"
     }
 }
 
