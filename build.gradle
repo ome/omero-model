@@ -5,13 +5,15 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
     maven {
+        name 'ome.maven'
         url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
     }
     maven {
-        url "https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases"
+        name 'unidata-releases'
+        url "https://artifacts.unidata.ucar.edu/repository/unidata-releases"
     }
 }
 
@@ -31,6 +33,7 @@ dependencies {
 
     provided 'edu.ucar:bufr:3.0'
     provided 'edu.ucar:udunits:4.5.5'
+    provided 'edu.ucar:netcdf:4.3.22'
 
     // Needs updating to later versions
     provided 'org.springframework:spring-orm:4.3.14.RELEASE'
@@ -40,8 +43,8 @@ dependencies {
 
     // Our libraries
     api 'org.openmicroscopy:ome-xml:5.6.2'
-    api 'ome:formats-bsd:5.9.+'
-    api 'ome:formats-gpl:5.9.+'
+    provided 'ome:formats-bsd:5.9.2'
+    provided 'ome:formats-gpl:5.9.2'
 }
 
 test {
