@@ -541,8 +541,8 @@ implements java.io.Serializable, IObject
     }
 
    /**
-    * Use the {@link ome.model.internal.Details#copy(ome.model.internal.Details)}
-    * or {@link ome.model.internal.Details#shallowCopy(ome.model.internal.Details)}
+    * Use the {@link ome.model.internal.Details##copy(ome.model.internal.Details)}
+    * or {@link ome.model.internal.Details##shallowCopy(ome.model.internal.Details)}
     * methods to set the {@link Details} instance instead.
     */
     protected void setDetails(ome.model.internal.Details details) {
@@ -1782,7 +1782,7 @@ implements java.io.Serializable, IObject
         }
 
        /**
-        * Overrides {@link ome.model.internal.Details#setUpdateEvent(ome.model.meta.Event)} to
+        * Overrides {@link ome.model.internal##setUpdateEvent(ome.model.meta.Event)} to
         * do nothing.
         */
         @Override
