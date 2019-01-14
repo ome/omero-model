@@ -31,8 +31,6 @@ public class Utils {
 
     protected final static String CGLIB_IDENTIFIER = "$$EnhancerByCGLIB$$";
 
-    protected final static String JAVASSIST_IDENTIFIER = "_$$_javassist";
-
     protected final static String JVSTE_IDENTIFIER = "_$$_jvste";
 
     /**
@@ -52,15 +50,6 @@ public class Utils {
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException( /* TODO */
                 "Classname contains " + CGLIB_IDENTIFIER
-                        + " but base class cannout be found.");
-            }
-        } else if (s.contains(JAVASSIST_IDENTIFIER)) {
-            try {
-                return (Class<T>) Class.forName(s.substring(0, s
-                        .indexOf(JAVASSIST_IDENTIFIER)));
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException( /* TODO */
-                "Classname contains " + JAVASSIST_IDENTIFIER
                         + " but base class cannout be found.");
             }
         } else if (s.contains(JVSTE_IDENTIFIER)) {
