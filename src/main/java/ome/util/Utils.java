@@ -31,7 +31,7 @@ public class Utils {
 
     protected final static String CGLIB_IDENTIFIER = "$$EnhancerByCGLIB$$";
 
-    protected final static String JVSTE_IDENTIFIER = "_$$_jvste";
+    protected final static String JVST_IDENTIFIER = "_$$_jvst";
 
     /**
      * finds the "true" class identified by a given Class object. This is
@@ -52,13 +52,13 @@ public class Utils {
                 "Classname contains " + CGLIB_IDENTIFIER
                         + " but base class cannout be found.");
             }
-        } else if (s.contains(JVSTE_IDENTIFIER)) {
+        } else if (s.contains(JVST_IDENTIFIER)) {
             try {
                 return (Class<T>) Class.forName(s.substring(0, s
-                        .indexOf(JVSTE_IDENTIFIER)));
+                        .indexOf(JVST_IDENTIFIER)));
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException( /* TODO */
-                "Classname contains " + JVSTE_IDENTIFIER
+                "Classname contains " + JVST_IDENTIFIER
                         + " but base class cannout be found.");
             }
         }
