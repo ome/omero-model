@@ -313,7 +313,7 @@ implements java.io.Serializable, IObject
 #if($type.annotated), IAnnotated#end
 {
 
-   /* These values are defined in dsl/resources/ome/dsl/object.vm:
+   /* These values are defined in omero-model/src/main/resources/templates/object.vm:
     * -------------------------------------------------------------
     * Explanation of serialVersionUID ex 0000000 03 00 00 01 03 01 L;
     * 1-7   : currently unused
