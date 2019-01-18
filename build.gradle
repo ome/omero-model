@@ -77,7 +77,7 @@ dsl {
             template "object.vm"
             outputPath "java"
             formatOutput { st ->
-                "${st.getPackage()}/${st.getShortname()}.java"
+                "${st.package.replace('.', '/')}/${st.shortname}.java"
             }
         }
     }
