@@ -22,29 +22,24 @@ version = '5.5.0-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-configurations {
-    provided
-    api.extendsFrom provided
-}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'org.testng', name: 'testng', version: '6.14.2'
 
-    provided 'edu.ucar:bufr:3.0'
-    provided 'edu.ucar:udunits:4.5.5'
-    provided 'edu.ucar:netcdf:4.3.22'
+    implementation 'edu.ucar:bufr:3.0'
+    implementation 'edu.ucar:udunits:4.5.5'
+    implementation 'edu.ucar:netcdf:4.3.22'
 
     // Needs updating to later versions
-    provided 'org.springframework:spring-orm:4.3.14.RELEASE'
-    provided 'org.springframework:spring-context:4.3.14.RELEASE'
-    provided 'org.hibernate:hibernate-core:3.6.10.Final'
-    provided 'org.hibernate:hibernate-search:3.4.2.Final'
+    api 'org.springframework:spring-orm:4.3.14.RELEASE'
+    api 'org.springframework:spring-context:4.3.14.RELEASE'
+    api 'org.hibernate:hibernate-core:3.6.10.Final'
+    api 'org.hibernate:hibernate-search:3.4.2.Final'
 
     // Our libraries
     api 'org.openmicroscopy:ome-xml:5.6.2'
-    provided 'ome:formats-bsd:5.9.2'
-    provided 'ome:formats-gpl:5.9.2'
+    api 'ome:formats-bsd:5.9.2'
+    api 'ome:formats-gpl:5.9.2'
 }
 
 test {
@@ -102,6 +97,10 @@ dsl {
             outputFile "resources/enums.properties"
         }
     }
+}
+
+clean {
+    delete "src/generated"
 }
 
 // Add publish functionality
