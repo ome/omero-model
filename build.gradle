@@ -69,12 +69,12 @@ dsl {
             dir: "src/main/resources/templates",
             include: "**/*.vm"
     )
-    outputPath "src/generated"
+    outputDir "src/generated"
 
     code {
         java {
             template "object.vm"
-            outputPath "java"
+            outputDir "java"
             formatOutput { st ->
                 "${st.package.replace('.', '/')}/${st.shortname}.java"
             }
