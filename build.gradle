@@ -62,14 +62,8 @@ sourceSets {
 }
 
 dsl {
-    omeXmlFiles fileTree(
-            dir: "src/main/resources/mappings",
-            include: '**/*.ome.xml'
-    )
-    templateFiles fileTree(
-            dir: "src/main/resources/templates",
-            include: "**/*.vm"
-    )
+    omeXmlFiles fileTree(dir: "src/main/resources/mappings", include: '**/*.ome.xml')
+    templatesDir "src/main/resources/templates"
     outputDir "src/generated"
 
     code {
