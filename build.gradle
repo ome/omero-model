@@ -66,6 +66,7 @@ dsl {
     omeXmlFiles fileTree(dir: "src/main/resources/mappings", include: '**/*.ome.xml')
     templatesDir "src/main/resources/templates"
     outputDir "src/generated"
+    profile "src/main/resources/templates/psql-types.properties"
 
     code {
         java {
