@@ -50,27 +50,9 @@ test {
     }
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs 'src/generated/java'
-        }
-        resources {
-            srcDirs 'src/generated/resources'
-        }
-    }
-}
-
 dsl {
-    omeXmlFiles fileTree(
-            dir: "src/main/resources/mappings",
-            include: '**/*.ome.xml'
-    )
-    templateFiles fileTree(
-            dir: "src/main/resources/templates",
-            include: "**/*.vm"
-    )
-    outputDir "src/generated"
+    omeXmlFiles fileTree(dir: "src/main/resources/mappings", include: '**/*.ome.xml')
+    templatesDir "src/main/resources/templates"
 
     code {
         java {
