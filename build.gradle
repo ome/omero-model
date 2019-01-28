@@ -51,8 +51,7 @@ test {
 }
 
 dsl {
-    omeXmlFiles fileTree(dir: "src/main/resources/mappings", include: '**/*.ome.xml')
-    databaseTypes "src/main/resources/templates/psql-types.properties"
+    databaseType "psql"
 
     code {
         java {
