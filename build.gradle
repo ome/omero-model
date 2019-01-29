@@ -11,10 +11,10 @@ repositories {
         name 'ome.maven'
         url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
     }
-//    maven {
-//        name 'unidata'
-//        url "https://artifacts.unidata.ucar.edu/repository/unidata-all/"
-//    }
+    maven {
+        name 'unidata'
+        url "https://artifacts.unidata.ucar.edu/repository/unidata-all/"
+    }
 }
 
 group = 'org.openmicroscopy'
@@ -39,9 +39,9 @@ dependencies {
     api 'ome:formats-gpl:5.9.2'
 
     // Unidata
-    // api 'edu.ucar:bufr:3.0'
-    // api 'edu.ucar:udunits:4.5.5'
-    // api 'edu.ucar:netcdf:4.3.22'
+    api 'edu.ucar:bufr:3.0'
+    api 'edu.ucar:udunits:4.5.5'
+    api 'edu.ucar:netcdf:4.3.22'
 }
 
 test {
