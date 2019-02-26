@@ -34,6 +34,13 @@ gradle-local.properties
 *.ipr
 *.iws
 
+# Eclipse IDE settings
+.settings
+
+# NetBeans IDE settings
+.nb-gradle
+.nb-gradle-properties
+
 # Gradle cache
 .gradle
 
