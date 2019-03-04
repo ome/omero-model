@@ -35,11 +35,12 @@ gradle-local.properties
 *.iws
 
 # Eclipse IDE settings
-.settings
+.settings/
 
 # NetBeans IDE settings
-.nb-gradle
-.nb-gradle-properties
+/.nb-gradle-properties
+/nb-configuration.xml
+.nb-gradle/
 
 # Gradle cache
 .gradle
