@@ -42,6 +42,9 @@ gradle-local.properties
 /nb-configuration.xml
 .nb-gradle/
 
+# Visual Studio IDE settings
+.vscode/
+
 # Gradle cache
 .gradle
 
