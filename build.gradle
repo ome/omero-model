@@ -87,3 +87,9 @@ clean {
     delete dsl.outputDir
 }
 
+jar {
+    manifest {
+        attributes("Main-Class": 'ome.util.tasks.Run')
+    }
+}
+
