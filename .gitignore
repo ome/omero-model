@@ -37,6 +37,9 @@ gradle-local.properties
 # Eclipse IDE settings
 .settings/
 
+# IntelliJ IDE settings
+.idea/
+
 # NetBeans IDE settings
 /.nb-gradle-properties
 /nb-configuration.xml
