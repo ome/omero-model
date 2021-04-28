@@ -788,6 +788,7 @@ create index originalfile_mime_index on originalfile (mimetype);
 create index originalfile_path_index on originalfile (path);
 create index originalfile_repo_index on originalfile (repo);
 create index originalfile_hash_index on originalfile (hash);
+create index originalfile_path_name_index on originalfile ((path || name));
 
 -- protect against 2017-SV5
 
