@@ -38,6 +38,9 @@ dependencies {
         exclude group: "edu.ucar", module: "netcdf"
     }
     api("edu.ucar:udunits:4.5.5")
+
+    api("joda-time:joda-time:2.10.3")
+    testImplementation("com.beust:jcommander:1.78")
 }
 
 test {
