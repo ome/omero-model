@@ -9,9 +9,9 @@ on:
 
 jobs:
   build:
-    uses: jburel/dotgithub/.github/workflows/gradle_build.yml@fbf3035ec6e506144ed0929e721c60200993db56
+    uses: jburel/dotgithub/.github/workflows/gradle_build.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
   publish:
-    uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@fbf3035ec6e506144ed0929e721c60200993db56
+    uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
     with:
       ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
