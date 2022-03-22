@@ -9,11 +9,11 @@ on:
 
 jobs:
   build:
-    uses: jburel/dotgithub/.github/workflows/gradle_build.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
+    uses: jburel/dotgithub/.github/workflows/gradle_build.yml@7a1720a1f16834c06f220a7806f6e0a1addd2237
   publish:
     needs: build
     if: startsWith(github.ref, 'refs/tags')
-    uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
+    uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@7a1720a1f16834c06f220a7806f6e0a1addd2237
     secrets:
       ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
