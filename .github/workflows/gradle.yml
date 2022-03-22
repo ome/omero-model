@@ -11,6 +11,8 @@ jobs:
   build:
     uses: jburel/dotgithub/.github/workflows/gradle_build.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
   publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags')
     uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@af30f81d66c00e94c6d8e5183121a0d2db48c377
     secrets:
       ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
