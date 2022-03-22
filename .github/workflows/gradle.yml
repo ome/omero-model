@@ -1,9 +1,18 @@
 ---
 name: Gradle
 
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
     uses: jburel/dotgithub/.github/workflows/gradle_build.yml@fbf3035ec6e506144ed0929e721c60200993db56
   publish:
     uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@fbf3035ec6e506144ed0929e721c60200993db56
+    with:
+      ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+      ARTIFACTORY_URL: ${{ secrets.ARTIFACTORY_URL }}
