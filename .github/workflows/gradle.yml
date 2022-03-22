@@ -4,6 +4,6 @@ name: Gradle
 
 jobs:
   build:
-    uses: jburel/.github/workflow-templates/gradle_build.yml@57b69706dbe1f2a6620da8470c5f809231ccb8ec
+    uses: jburel/.github/workflows/gradle_build.yml@fbf3035ec6e506144ed0929e721c60200993db56
   publish:
-    uses: jburel/.github/workflow-templates/gradle_publish.yml@57b69706dbe1f2a6620da8470c5f809231ccb8ec
+    uses: jburel/.github/workflows/gradle_publish.yml@fbf3035ec6e506144ed0929e721c60200993db56
