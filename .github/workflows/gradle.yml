@@ -12,7 +12,7 @@ jobs:
     uses: jburel/dotgithub/.github/workflows/gradle_build.yml@eb6c97e62ae8d739897ed53bda13f65007a86c6d
   publish:
     uses: jburel/dotgithub/.github/workflows/gradle_publish.yml@eb6c97e62ae8d739897ed53bda13f65007a86c6d
-    with:
+    secrets:
       ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
       ARTIFACTORY_URL: ${{ secrets.ARTIFACTORY_URL }}
