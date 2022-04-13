@@ -9,10 +9,10 @@ on:
 
 jobs:
   build:
-    uses: jburel/action-workflows/.github/workflows/gradle_build.yml@a9f897eb884598993807a7c57e63e1e292da66a8
+    uses: jburel/action-workflows/.github/workflows/gradle_build.yml@2b7f87705eae346248a3c45862b15924e8621144
   publish_snapshot:
     needs: build
-    uses: jburel/action-workflows/.github/workflows/gradle_publish.yml@a9f897eb884598993807a7c57e63e1e292da66a8
+    uses: jburel/action-workflows/.github/workflows/gradle_publish.yml@2b7f87705eae346248a3c45862b15924e8621144
     with:
       ARTIFACTORY_URL: "snapshots"
     secrets:
@@ -21,7 +21,7 @@ jobs:
   publish:
     needs: build
     if: startsWith(github.ref, 'refs/tags')
-    uses: jburel/action-workflows/.github/workflows/gradle_publish.yml@a9f897eb884598993807a7c57e63e1e292da66a8
+    uses: jburel/action-workflows/.github/workflows/gradle_publish.yml@2b7f87705eae346248a3c45862b15924e8621144
     with:
       ARTIFACTORY_URL: "staging"
     secrets:
