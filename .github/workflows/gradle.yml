@@ -11,6 +11,7 @@ jobs:
   build:
     uses: jburel/action-workflows/.github/workflows/gradle_build.yml@608e02b88d75c240f96a0548e435afee625b3084
   publish_snapshots:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     needs: build
     uses: jburel/action-workflows/.github/workflows/gradle_publish.yml@608e02b88d75c240f96a0548e435afee625b3084
     with:
