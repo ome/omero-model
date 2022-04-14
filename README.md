@@ -23,3 +23,4 @@ This will compile, build, test and create a distribution bundle.
 
 ## Unit tests
  * Run `gradle test`
+
