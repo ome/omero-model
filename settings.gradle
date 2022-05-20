@@ -5,6 +5,7 @@ pluginManagement {
         maven {
             url 'https://artifacts.openmicroscopy.org/artifactory/maven/'
         }
+        gradlePluginPortal()
     }
 }
 
