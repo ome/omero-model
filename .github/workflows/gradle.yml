@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         java: [11]
+        distribution: ['temurin', 'zulu']
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     env:
@@ -23,6 +24,7 @@ jobs:
         uses: ome/action-gradle@v3.5
         with:
           java-version: ${{ matrix.java }}
+          java-distribution: ${{ matrix.distribution }}
           gradle-version: ${{ env.gradle_version }}
       - name: Run commands
         run: gradle ${{ env.gradle_commands }}
