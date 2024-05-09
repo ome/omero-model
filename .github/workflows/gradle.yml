@@ -18,11 +18,11 @@ jobs:
       gradle_version: 6.8.3 # use ``current`` to install the current stable release
       gradle_commands: build # default is build
     steps:
-    - name: Set up environment
-      uses: ome/action-gradle@v3.3
-      with:
-        java-version: ${{ inputs.java-version }}
-        gradle-version: ${{ inputs.gradle-version }}
+      - name: Set up environment
+        uses: ome/action-gradle@v3.3
+        with:
+          java-version: ${{ inputs.java-version }}
+          gradle-version: ${{ inputs.gradle-version }}
       - name: Run commands
         run: gradle ${{ env.gradle_commands }}
   publish_snapshots:
