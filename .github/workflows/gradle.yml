@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up environment
-        uses: ome/action-gradle@v3.3
+        uses: ome/action-gradle@v3.5
         with:
           java-version: ${{ matrix.java }}
           gradle-version: ${{ env.gradle_version }}
