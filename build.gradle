@@ -13,6 +13,19 @@ ext {
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url 'https://artifacts.openmicroscopy.org/artifactory/ome.releases'
+    }
+    maven {
+        url 'https://artifacts.openmicroscopy.org/artifactory/ome.external'
+    }
+    maven {
+        url 'https://artifacts.openmicroscopy.org/artifactory/scijava-thirdparty'
+    }
+    maven {
+        name 'Unidata'
+        url 'https://artifactsopenmicroscopy.org/artifactory/unidata-releases'
+    }
 }
 
 compileJava {
