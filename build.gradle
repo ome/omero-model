@@ -24,7 +24,7 @@ repositories {
     }
     maven {
         name 'Unidata'
-        url 'https://artifactsopenmicroscopy.org/artifactory/unidata-releases'
+        url 'https://artifacts.openmicroscopy.org/artifactory/unidata-releases'
     }
 }
 
