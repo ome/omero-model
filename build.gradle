@@ -19,12 +19,13 @@ repositories {
     maven {
         url 'https://artifacts.openmicroscopy.org/artifactory/ome.external'
     }
-    maven {
-        url 'https://artifacts.openmicroscopy.org/artifactory/scijava-thirdparty'
-    }
+
     maven {
         name 'Unidata'
         url 'https://artifacts.openmicroscopy.org/artifactory/unidata-releases'
+    }
+    maven {
+        url 'https://artifacts.glencoesoftware.com/artifactory/scijava-thirdparty'
     }
 }
 
