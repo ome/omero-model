@@ -23,11 +23,16 @@ dependencies {
     testImplementation("org.testng:testng:7.5")
 
     // Needs updating to later versions
-    api("org.springframework:spring-orm:4.3.14.RELEASE")
-    api("org.springframework:spring-context:4.3.14.RELEASE")
-    api("org.springframework:spring-context-support:4.3.22.RELEASE")
-    api("org.hibernate:hibernate-core:3.6.10.Final")
-    api("org.hibernate:hibernate-search:3.4.2.Final")
+    api("org.springframework:spring-orm:4.3.30.RELEASE")
+    api("org.springframework:spring-context:4.3.30.RELEASE")
+    api("org.springframework:spring-context-support:4.3.30.RELEASE")
+    api("org.hibernate:hibernate-core:3.6.10.Final"){
+        exclude group: "dom4j", module: "dom4j"
+    }
+    api("org.hibernate:hibernate-search:3.4.2.Final"){
+        exclude group: "dom4j", module: "dom4j"
+    }
+    api("org.dom4j:dom4j:2.1.4")
 
     // Our libraries
     api("ome:formats-gpl:8.1.1")
