@@ -22,10 +22,10 @@ repositories {
 
     maven {
         name 'Unidata'
-        url 'https://artifacts.openmicroscopy.org/artifactory/unidata-releases'
+        url 'https://artifacts.glencoesoftware.com/artifactory/unidata-releases'
     }
     maven {
-        url 'https://artifacts.glencoesoftware.com/artifactory/scijava-thirdparty'
+        url 'https://maven.scijava.org/content/groups/public/'
     }
 }
 
