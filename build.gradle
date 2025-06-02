@@ -22,7 +22,7 @@ repositories {
 
     maven {
         name 'Unidata'
-        url 'https://artifacts.glencoesoftware.com/artifactory/unidata-releases'
+        url 'https://artifacts.unidata.ucar.edu/repository/unidata-all/'
     }
     maven {
         url 'https://maven.scijava.org/content/groups/public/'
