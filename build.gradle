@@ -13,6 +13,20 @@ ext {
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url 'https://artifacts.openmicroscopy.org/artifactory/ome.releases'
+    }
+    maven {
+        url 'https://artifacts.openmicroscopy.org/artifactory/ome.external'
+    }
+
+    maven {
+        name 'Unidata'
+        url 'https://artifacts.unidata.ucar.edu/repository/unidata-all/'
+    }
+    maven {
+        url 'https://maven.scijava.org/content/groups/public/'
+    }
 }
 
 compileJava {
