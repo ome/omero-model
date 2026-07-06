@@ -47,7 +47,8 @@ dependencies {
     api("org.dom4j:dom4j:2.1.4")
 
     // Use Guava types
-    api("com.google.guava:guava:33.6.0-jre")
+    api("com.google.guava:guava:32.0.1-jre")
+
     // Our libraries
     api("ome:formats-gpl:8.5.0")
 
