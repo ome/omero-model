@@ -45,6 +45,7 @@ dependencies {
         exclude group: "dom4j", module: "dom4j"
     }
     api("org.dom4j:dom4j:2.1.4")
+    api("com.google.guava:guava:33.6.0-jre")
 
     // Our libraries
     api("org.openmicroscopy:formats-gpl:9.0.0-rc5")
