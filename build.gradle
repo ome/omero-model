@@ -31,6 +31,12 @@ compileJava {
     options.release = 11
 }
 
+configurations.all {
+    attributes {
+        attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
+    }
+}
+
 dependencies {
     testImplementation("org.testng:testng:7.5")
 
